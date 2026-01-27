@@ -5,3 +5,5 @@ vim.opt.expandtab  = true
 
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
+
+vim.wo.relativenumber = true
