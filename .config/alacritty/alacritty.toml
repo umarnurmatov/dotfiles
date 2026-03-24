@@ -1,10 +1,6 @@
-[general]
-import = [
-    "~/.config/alacritty/themes/themes/moonfly.toml"
-]
-
-[window]
-startup_mode = "Maximized"
+[terminal]
+shell = '/usr/bin/fish'
 
 [font]
 normal = { family = "Caskaydia Mono Nerd Font", style = "Regular" }
+size = 14
