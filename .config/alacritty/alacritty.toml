@@ -1,5 +1,5 @@
 [terminal]
-shell = '/bin/fish'
+shell = '/usr/bin/fish'
 
 [font]
 normal = { family = "Caskaydia Mono Nerd Font", style = "Regular" }
