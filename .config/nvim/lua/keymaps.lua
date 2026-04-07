@@ -17,3 +17,6 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find f
 vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = 'Telescope diagnostics' })
 vim.keymap.set('n', '<leader>fs', builtin.lsp_document_symbols, { desc = 'Telescope document symbols' })
 vim.keymap.set('n', '<leader>fr', builtin.lsp_references, { desc = 'Telescope symbol refs' })
+
+-- Clang format
+vim.keymap.set('n', '<leader>cf', ':!clang-format -style=file -i %<CR>', { noremap = true })
