@@ -9,6 +9,7 @@ import = [
 [window]
 startup_mode = "Maximized"
 decorations  = "None"
+padding      = { x = 5, y = 5 }
 
 [font]
 normal = { family = "Caskaydia Mono Nerd Font", style = "Regular" }
