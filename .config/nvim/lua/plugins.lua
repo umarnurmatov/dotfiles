@@ -17,7 +17,11 @@ require('pckr').add{
     'hrsh7th/nvim-cmp',
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-buffer',
-    'nvim-treesitter/nvim-treesitter',
+    {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate',
+        tag = 'v0.10.0'
+    },
     'bluz71/vim-moonfly-colors',
     'rmagatti/auto-session',
     {
