@@ -1,6 +1,7 @@
 
 vim.pack.add({
     { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = 'main' },
+    { src = 'https://github.com/neovim/nvim-lspconfig' },
     { src = 'https://github.com/bluz71/vim-moonfly-colors'},
     { src = 'https://github.com/nvim-telescope/telescope.nvim' },
     { src = 'https://github.com/nvim-lua/plenary.nvim' },
@@ -9,6 +10,7 @@ vim.pack.add({
     { src = 'https://github.com/hrsh7th/cmp-buffer' },
     { src = 'https://github.com/nvim-lualine/lualine.nvim' },
     { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
+    { src = 'https://github.com/rmagatti/auto-session' },
 })
 
 require('lualine').setup {
