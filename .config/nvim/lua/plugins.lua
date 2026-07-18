@@ -1,41 +1,15 @@
-local pckr_path = vim.fn.stdpath('data') .. '/pckr/pckr.nvim'
 
-if not vim.loop.fs_stat(pckr_path) then
-  vim.fn.system({
-    'git',
-    'clone',
-    '--filter=blob:none',
-    'https://github.com/lewis6991/pckr.nvim',
-    pckr_path,
-  })
-end
-
-vim.opt.rtp:prepend(pckr_path)
-
-require('pckr').add{
-    'neovim/nvim-lspconfig',
-    'hrsh7th/nvim-cmp',
-    'hrsh7th/cmp-nvim-lsp',
-    'hrsh7th/cmp-buffer',
-    {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate',
-        tag = 'v0.10.0'
-    },
-    'bluz71/vim-moonfly-colors',
-    'rmagatti/auto-session',
-    {
-        'nvim-telescope/telescope.nvim', 
-        tag = '0.1.8',
-        requires = { {'nvim-lua/plenary.nvim'} }
-    },
-    {
-        'nvim-lualine/lualine.nvim',
-          requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-    }
-}
-
-require("auto-session").setup({})
+vim.pack.add({
+    { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = 'main' },
+    { src = 'https://github.com/bluz71/vim-moonfly-colors'},
+    { src = 'https://github.com/nvim-telescope/telescope.nvim' },
+    { src = 'https://github.com/nvim-lua/plenary.nvim' },
+    { src = 'https://github.com/hrsh7th/nvim-cmp' },
+    { src = 'https://github.com/hrsh7th/cmp-nvim-lsp' },
+    { src = 'https://github.com/hrsh7th/cmp-buffer' },
+    { src = 'https://github.com/nvim-lualine/lualine.nvim' },
+    { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
+})
 
 require('lualine').setup {
   options = {

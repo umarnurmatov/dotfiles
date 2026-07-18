@@ -7,3 +7,5 @@ vim.opt.clipboard = 'unnamedplus'
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 
 vim.wo.relativenumber = true
+
+vim.o.winborder = 'rounded'
