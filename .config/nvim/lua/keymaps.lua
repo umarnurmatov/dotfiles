@@ -21,3 +21,7 @@ vim.keymap.set('n', '<leader>fr', builtin.lsp_references, { desc = 'Telescope sy
 
 -- Clang format
 vim.keymap.set('n', '<leader>cf', ':!clang-format -style=file -i %<CR>', { noremap = true })
+
+-- Tabs
+vim.keymap.set("n", "<Leader>_", "<cmd>vsplit<CR>", s) -- Split the window vertically
+vim.keymap.set("n", "<Leader>-", "<cmd>split<CR>", s) -- Split the window horizontally
