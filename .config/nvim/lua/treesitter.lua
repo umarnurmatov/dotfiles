@@ -8,4 +8,4 @@ vim.api.nvim_create_autocmd("FileType", { -- enable treesitter highlighting and 
     end
   end
 })
-require('nvim-treesitter').install {'c', 'cpp', 'python', 'bash', 'verilog'}
+require('nvim-treesitter').install {'c', 'cpp', 'python', 'bash', 'systemverilog'}

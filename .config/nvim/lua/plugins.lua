@@ -1,9 +1,29 @@
+--- HOOKS ---
+
+local hooks = function(ev)
+  local name, kind = ev.data.spec.name, ev.data.kind
+
+  if name == 'telescope-fzf-native.nvim' and (kind == 'install' or kind == 'update') then
+    vim.system({ 'make' }, { cwd = ev.data.path }):wait()
+  end
+
+  if name == 'nvim-treesitter' and kind == 'update' then
+    if not ev.data.active then vim.cmd.packadd('nvim-treesitter') end
+    vim.cmd('TSUpdate')
+  end
+
+end
+
+vim.api.nvim_create_autocmd('PackChanged', { callback = hooks })
+
+--- PACK.ADD ---
 
 vim.pack.add({
-    { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = 'main' },
+    { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = 'main'},
     { src = 'https://github.com/neovim/nvim-lspconfig' },
     { src = 'https://github.com/bluz71/vim-moonfly-colors'},
-    { src = 'https://github.com/nvim-telescope/telescope.nvim' },
+    { src = 'https://github.com/nvim-telescope/telescope.nvim', version = 'v0.2.2' }, --- requires ripgrep
+    { src = 'https://github.com/nvim-telescope/telescope-fzf-native.nvim' },
     { src = 'https://github.com/nvim-lua/plenary.nvim' },
     { src = 'https://github.com/hrsh7th/nvim-cmp' },
     { src = 'https://github.com/hrsh7th/cmp-nvim-lsp' },
@@ -12,6 +32,8 @@ vim.pack.add({
     { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
     { src = 'https://github.com/rmagatti/auto-session' },
 })
+
+--- SETUP ---
 
 require('lualine').setup {
   options = {
@@ -69,3 +91,6 @@ require('lualine').setup {
 }
 
 require("auto-session").setup({})
+
+require('telescope').setup()
+require('telescope').load_extension('fzf')
